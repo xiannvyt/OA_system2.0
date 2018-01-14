@@ -20,6 +20,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.oa.pojos.OaEmp;
 import com.oa.service.zmy.LoginService;
+import com.oa.service.zmy.RoleService;
+import com.oa.vo.ResultMap;
 import com.xiaoleilu.hutool.captcha.CaptchaUtil;
 import com.xiaoleilu.hutool.captcha.LineCaptcha;
 import com.xiaoleilu.hutool.util.RandomUtil;
@@ -33,33 +35,43 @@ import com.xiaoleilu.hutool.util.RandomUtil;
 public class LoginController {
 	@Autowired
 	LoginService lService;
+	@Autowired
+	RoleService rService;
 	/**
 	 * 登录验证
 	 * @param req
 	 * @return
 	 */
 	@RequestMapping(value="/valiator",method=RequestMethod.POST)
-	public @ResponseBody Map<String,Object> toIndex(HttpServletRequest req){
-		String userName=req.getParameter("username");
-		String password=req.getParameter("password");
-		String code=req.getParameter("code");
-		Object attribute = req.getSession().getAttribute("code");
-		Map<String, Object> map=new HashMap<>();
-		if(code.equals(attribute)){
-			OaEmp emp = lService.vaildatorLogin(userName, password);
-			if(emp!=null){
-				req.getSession().setAttribute("emp", emp);
-				map.put("msg", "登录成功");
-				map.put("result", true);
+	
+	public @ResponseBody HashMap<String,Object> toIndex(HttpServletRequest req){
+		try{
+			String userName=req.getParameter("username");
+			String password=req.getParameter("password");
+			String code=req.getParameter("code");
+			Object attribute = req.getSession().getAttribute("code");
+			HashMap<String, Object> map=new HashMap<>();
+			if(code.equals(attribute)){
+				OaEmp emp = lService.vaildatorLogin(userName, password);
+				if(emp!=null){
+					rService.getRoleMenusByEmp(emp.getEmpId());
+					req.getSession().setAttribute("emp", emp);
+					map.put("msg", "登录成功");
+					map.put("result", true);
+				}else{
+					map.put("msg", "登录失败");
+					map.put("result", false);
+				}
 			}else{
-				map.put("msg", "登录失败");
+				map.put("msg", "验证码错误");
 				map.put("result", false);
 			}
-		}else{
-			map.put("msg", "验证码错误");
-			map.put("result", false);
+			return map;
+		}catch(Exception e){
+			e.printStackTrace();
+			ResultMap.putObj(false,null,e.getMessage());
+			return ResultMap.getResultMap();
 		}
-		return map;
 	}
 	/**
 	 * 登出清除session

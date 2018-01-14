@@ -13,7 +13,7 @@ import com.oa.pojos.OaScheduletype;
  * @author qh
  *
  */
-public interface IScheduletypeDAO extends CrudRepository<OaScheduletype, Long>{
+public interface IOaScheduletypeDAO extends CrudRepository<OaScheduletype, Long>{
 	/**
 	 * 分页查询排班类型表
 	 * @param pageable
