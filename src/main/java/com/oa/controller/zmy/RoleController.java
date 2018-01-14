@@ -1,7 +1,5 @@
 package com.oa.controller.zmy;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.oa.pojos.OaMenu;
 import com.oa.pojos.OaRole;
 import com.oa.service.zmy.RoleService;
 import com.oa.vo.ResultMap;

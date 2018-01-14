@@ -22,7 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.oa.dao.jpa.IOaLeaveDao;
-import com.oa.dao.jpa.IOaflowDao;
+import com.oa.dao.jpa.IOaFlowDao;
 import com.oa.pojos.OaFlow;
 import com.oa.vo.hlg.OaFlowVo;
 
@@ -32,7 +32,7 @@ public class FlowService {
 	@Autowired
 	private IOaLeaveDao leaveDao;
 	@Autowired
-	private IOaflowDao oaflowDao;
+	private IOaFlowDao oaflowDao;
 	
 	/**
 	 * 查询待办流程

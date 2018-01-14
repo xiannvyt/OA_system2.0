@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.log4j.lf5.viewer.configure.MRUFileManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,10 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.oa.dao.jpa.IOaEmpDao;
 import com.oa.dao.jpa.IOaMenuDao;
 import com.oa.dao.jpa.IOaRoleDao;
-import com.oa.pojos.OaEmp;
 import com.oa.pojos.OaMenu;
 import com.oa.pojos.OaRole;
-import com.oa.vo.ResultMap;
 
 @Service
 @Transactional

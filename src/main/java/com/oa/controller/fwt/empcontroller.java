@@ -31,4 +31,11 @@ public class empcontroller {
 		
 		return es.findEmppage(page, limit,dept,name,type,state,begindate,enddate);
 	}
+	
+	@RequestMapping("/toEmpform")
+	public ModelAndView toEmpform(){
+		ModelAndView mv = new ModelAndView("Empform");
+		
+		return mv;
+	}
 }
