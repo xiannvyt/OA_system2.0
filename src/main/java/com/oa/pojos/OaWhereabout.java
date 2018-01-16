@@ -89,4 +89,11 @@ public class OaWhereabout implements Serializable {
 		this.oaEmp = oaEmp;
 	}
 
+	public OaWhereabout(String wheAbout, Date wheEnd, Date wheStart) {
+		this.wheAbout = wheAbout;
+		this.wheEnd = wheEnd;
+		this.wheStart = wheStart;
+	}
+	
+ 
 }
