@@ -1,0 +1,42 @@
+{
+	"code": 0,
+	"data": [
+		{
+			"deptId": null,
+			"oaEmps": null,
+			"oaMenus": null,
+			"roleId": 1,
+			"roleName": "老司机"
+		}, {
+			"deptId": null,
+			"oaEmps": null,
+			"oaMenus": null,
+			"roleId": 2,
+			"roleName": "贵哥"
+		}, {
+			"deptId": null,
+			"oaEmps": null,
+			"oaMenus": null,
+			"roleId": 3,
+			"roleName": "系统管理员"
+		}, {
+			"deptId": null,
+			"oaEmps": null,
+			"oaMenus": null,
+			"roleId": 4,
+			"roleName": ""
+		}, {
+			"deptId": null,
+			"oaEmps": null,
+			"oaMenus": null,
+			"roleId": 5,
+			"roleName": ""
+		}, {
+			"deptId": null,
+			"oaEmps": null,
+			"oaMenus": null,
+			"roleId": 6,
+			"roleName": "学霸"
+		}
+	]
+}

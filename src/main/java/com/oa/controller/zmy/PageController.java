@@ -30,6 +30,7 @@ public class PageController {
 		ModelAndView mv=new ModelAndView();
 		List<OaMenu> menu = mService.getMainMenu();
 		mv.addObject("menus",menu);
+		mv.setViewName("index");
 		return mv;
 	}
 	
@@ -39,7 +40,7 @@ public class PageController {
 	 */
 	@RequestMapping("/powerSet")
 	public String toPowerSet(){
-		return "powerSet";
+		return "menu/powerSet";
 	}
 	/**
 	 * 登录界面
@@ -55,9 +56,10 @@ public class PageController {
 	 * @param m
 	 * @return
 	 */
-	@RequestMapping("/form")
+	@RequestMapping("/menuForm")
 	public String toFrom(OaMenu m){
-		return "menuForm";
+		return "menu/menuForm";
 	}
+	
 	
 }
